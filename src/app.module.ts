@@ -15,6 +15,12 @@ import {
 } from './editorial/entities/editorial.schema';
 import { EditorialController } from './editorial/editorial.controller';
 import { EditorialService } from './editorial/editorial.service';
+import { Book, BookSchema } from './book/entities/book.schema';
+import { BookController } from './book/book.controller';
+import { BookService } from './book/book.service';
+import { Stock, StockSchema } from './stock/entities/stock.schemas';
+import { StockController } from './stock/stock.controller';
+import { StockService } from './stock/stock.service';
 
 @Module({
   imports: [
@@ -24,6 +30,8 @@ import { EditorialService } from './editorial/editorial.service';
       { name: Author.name, schema: AuthorSchema },
       { name: Category.name, schema: CategorySchema },
       { name: Editorial.name, schema: EditorialSchema },
+      { name: Book.name, schema: BookSchema },
+      { name: Stock.name, schema: StockSchema },
     ]),
   ],
   controllers: [
@@ -31,7 +39,16 @@ import { EditorialService } from './editorial/editorial.service';
     AuthorController,
     CategoryController,
     EditorialController,
+    BookController,
+    StockController,
   ],
-  providers: [AppService, AuthorService, CategoryService, EditorialService],
+  providers: [
+    AppService,
+    AuthorService,
+    CategoryService,
+    EditorialService,
+    BookService,
+    StockService,
+  ],
 })
 export class AppModule {}
