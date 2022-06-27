@@ -47,4 +47,10 @@ export class BookController {
     const removeBook = await this.bookService.remove(id);
     return res.status(HttpStatus.OK).json({ removeBook });
   }
+
+  // @Get(':isbn')
+  // async findByIsbn(@Res() res, @Param('isbn') isbn: string) {
+  //   const book = await this.bookService.findbyIsbn(isbn);
+  //   return res.status(HttpStatus.OK).json(book);
+  // }
 }

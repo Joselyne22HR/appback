@@ -21,6 +21,15 @@ import { BookService } from './book/book.service';
 import { Stock, StockSchema } from './stock/entities/stock.schemas';
 import { StockController } from './stock/stock.controller';
 import { StockService } from './stock/stock.service';
+import { Student, StudentSchema } from './student/entities/student.schema';
+import { StudentController } from './student/student.controller';
+import { StudentService } from './student/student.service';
+import { Loan, LoanSchema } from './loan/entities/loan.schema';
+import { LoanController } from './loan/loan.controller';
+import { LoanService } from './loan/loan.service';
+import { Returns, ReturnsSchema } from './returns/entities/return.schema';
+import { ReturnsController } from './returns/returns.controller';
+import { ReturnsService } from './returns/returns.service';
 
 @Module({
   imports: [
@@ -32,6 +41,9 @@ import { StockService } from './stock/stock.service';
       { name: Editorial.name, schema: EditorialSchema },
       { name: Book.name, schema: BookSchema },
       { name: Stock.name, schema: StockSchema },
+      { name: Student.name, schema: StudentSchema },
+      { name: Loan.name, schema: LoanSchema },
+      { name: Returns.name, schema: ReturnsSchema },
     ]),
   ],
   controllers: [
@@ -41,6 +53,9 @@ import { StockService } from './stock/stock.service';
     EditorialController,
     BookController,
     StockController,
+    StudentController,
+    LoanController,
+    ReturnsController,
   ],
   providers: [
     AppService,
@@ -49,6 +64,9 @@ import { StockService } from './stock/stock.service';
     EditorialService,
     BookService,
     StockService,
+    StudentService,
+    LoanService,
+    ReturnsService,
   ],
 })
 export class AppModule {}

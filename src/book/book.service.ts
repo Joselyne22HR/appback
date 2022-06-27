@@ -18,6 +18,10 @@ export class BookService {
     return await newBook.save();
   }
 
+  async findbyIsbn(isbn: string): Promise<Book[]> {
+    return await this.bookModel.find({ isbn }).exec();
+  }
+
   async findAll(): Promise<Book[]> {
     return await this.bookModel
       .find()
